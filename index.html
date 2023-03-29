@@ -6,7 +6,9 @@
     <style>
          input, button {border-radius:5px; padding:5px; margin:3px}
          div, form {border-radius:15px;}
+
     </style>
+
 </head>
 <body oncontextmenu="return false">
 <div style="width: 300px; margin:50px">
@@ -66,6 +68,27 @@
         function search() {
             document.getElementById("BS").innerHTML = "No rooms found in " + document.getElementById("city").value + " for selected dates"
         }
+</script>
+<script>
+    // Disable right-click
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+function ctrlShiftKey(e, keyCode) {
+  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+}
+
+document.onkeydown = (e) => {
+  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+  if (
+    event.keyCode === 123 ||
+    ctrlShiftKey(e, 'I') ||
+    ctrlShiftKey(e, 'J') ||
+    ctrlShiftKey(e, 'C') ||
+    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+  )
+    return false;
+};
+
 </script>
 </body>
 </html>
