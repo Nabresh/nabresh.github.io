@@ -5,8 +5,8 @@
     <title>Booking</title>
 </head>
 <body>
-<div style="width: 300px;">
-    <form style="border-style:solid">
+<div style="width: 300px; margin:50px">
+    <form style="border-style:solid; padding:10px">
         <div>
             <div>
                 <div>Search</div>
@@ -47,12 +47,22 @@
             </div>
 
             <div>
-                <div>
+                <div style="margin:5px">
                     <button type="reset"><span>Search</span></button>
                 </div>
             </div>
         </div>
     </form>
+    <div style="padding:10px">
+        <button onclick="setTimeout(search(), 4000);"><span>Reset form</span></button>
+        <div id="BS">
+        </div>
+    </div>
 </div>
+<script type="text/javascript">
+        function search() {
+            document.getElementById("BS").innerHTML = "No rooms found in Brasov for selected dates";
+        }
+</script>
 </body>
 </html>
