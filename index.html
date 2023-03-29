@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Booking</title>
+    <style>
+         input, button {border-radius:5px; padding:5px; margin:3px}
+         div, form {border-radius:15px;}
+    </style>
 </head>
 <body>
 <div style="width: 300px; margin:50px">
@@ -18,9 +22,8 @@
                         <div>
                             <div>
                                 <div>
-                                    <input autocomplete="off"
+                                    <input id="city" autocomplete="off"
                                            placeholder="Where are you going?" value="Braşov" maxlength="5">
-                                    <div></div>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +64,7 @@
 </div>
 <script type="text/javascript">
         function search() {
-            document.getElementById("BS").innerHTML = "No rooms found in Brasov for selected dates";
+            document.getElementById("BS").innerHTML = "No rooms found in " + document.getElementById("city").value + " for selected dates"
         }
 </script>
 </body>
